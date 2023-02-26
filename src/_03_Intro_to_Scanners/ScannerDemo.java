@@ -1,15 +1,20 @@
 package _03_Intro_to_Scanners;
 
+import java.io.InputStream;
 import java.util.Scanner;
 
 public class ScannerDemo {
 
-    /*
+
+	/*
      * A Scanner is an alternative to taking user input by using the console.
      * Unlike a JOptionPane it is also capable of taking in many data types
      * besides String.
      */
 
+	public void ScannerDemo() {
+Scanner scanner;
+	}
     public static void main(String[] args) {
         /*
          * 1. Create an object of the Scanner class.
@@ -24,8 +29,9 @@ public class ScannerDemo {
          * Eclipse's console. This may change depending on the environment where
          * are running your program or the input/output stream you are using.
          */
+Scanner scanner = new Scanner(System.in);
 
-        
+
         
         /*
          * 2. Use a syso to ask the user for their name and then use the Scanner
@@ -42,7 +48,9 @@ public class ScannerDemo {
          * String variable.
          */
 
-        
+        System.out.println("Please enter your name.");
+  String name = scanner.nextLine();
+  System.out.println("Hello " +name+ ".");
         
         /*
          * 3. Ask the user for their age in the console. Then use the Scanner to
@@ -51,9 +59,10 @@ public class ScannerDemo {
          * See if you can find the scanner method that does this without relying
          * on Integer.parseInt().
          */
-
-        
-        
+System.out.println("Please enter your age, " +name+ ".");
+  int age = scanner.nextInt();
+        System.out.println("You were born in the year "+(2022-age)+ ", weren't you, " +name+ "?" );
+        System.out.println("Let us test your intelligence, " +name+ "." );
         /*
          * 4.) Try asking the user for another piece of information that's not a
          * String or an int.
@@ -61,9 +70,14 @@ public class ScannerDemo {
          * Note: There are many methods similar to the one you used for int that
          * are capable of taking in primitive data types.
          */
-
+System.out.println("In decimal form, what is is 33 divided by 8?");
         // 5.) Print the user's data to the console nicely formatted.
-
+double answer = scanner.nextDouble();
+if(answer==4.125) {
+	System.out.println("4.125. Very well done, " +name+ ".");
+}else {
+	System.out.println("Incorrect answer. Until next time, " +name+ ".");
+}
         
         
         /*
@@ -72,7 +86,7 @@ public class ScannerDemo {
          * Note: When using a Scanner with the System.in input stream in larger
          * programs only close the scanner when your program is completely done.
          */
-
+scanner.close();
     }
 
 }
