@@ -1,17 +1,14 @@
 package _02_Generics_Store;
 
 import java.util.Random;
+import java.util.Scanner;
 
 import javax.swing.JLabel;
 
-public class Toy extends NonFood {
-	public Toy() {
-		if(new Random().nextBoolean()) {
+public class LegacyKai extends NonFood {
+	Scanner scanner = new Scanner(System.in);
+	public LegacyKai() {
 			this.item = "toy1.jpeg";
-		}
-		else {
-			this.item = "toy2.jpeg";
-		}
 	}
 
 	@Override
@@ -23,6 +20,6 @@ public class Toy extends NonFood {
 	@Override
 	public void advertise() {
 		// TODO Auto-generated method stub
-		
+		System.out.println("Product 2 is a rare 2019 Kai minifigure. The cost is $1.99. Press 'v' to view, 'y' to add to cart, and 'n' to keep shopping.");
 	}
 }

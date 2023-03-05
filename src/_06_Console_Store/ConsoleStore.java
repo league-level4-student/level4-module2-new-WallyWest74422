@@ -1,6 +1,22 @@
 package _06_Console_Store;
 
-public class ConsoleStore {
+import java.util.Scanner;
+
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+
+import _02_Generics_Store.AntManFigure;
+import _02_Generics_Store.Cart;
+import _02_Generics_Store.CommanderCody;
+import _02_Generics_Store.DisneyCMF;
+import _02_Generics_Store.DonutShop;
+import _02_Generics_Store.LegacyKai;
+import _02_Generics_Store.NonFood;
+import _02_Generics_Store.Rivendell;
+import _02_Generics_Store.Toy;
+
+public class ConsoleStore extends NonFood{
 
     /*
      * Write a program that simulates shopping in a store using the Scanner and
@@ -37,7 +53,47 @@ public class ConsoleStore {
      */
 
     public static void main(String[] args) {
-
+System.out.println("Welcome to the LEGO shop! Your current balance is $500. Type 1-6 to browse our range of products. Happy shopping!");
+CommanderCody p1 = new CommanderCody();
+LegacyKai p2 = new LegacyKai();
+Rivendell p3 = new Rivendell();
+DisneyCMF p4 = new DisneyCMF();
+AntManFigure p5= new AntManFigure();
+DonutShop p6 = new DonutShop();
+JFrame frame = new JFrame();
+JPanel panel = new JPanel();
+Scanner scanner = new Scanner(System.in);
+Cart<NonFood> Cart;
+Cart = new Cart<NonFood>();
+int product;
+product = scanner.nextInt();
+if(product == 1) {
+	p1.advertise();
+}else if(product == 2) {
+	p2.advertise();
+}else if(product == 3) {
+	p3.advertise();
+}else if(product == 4) {
+	p4.advertise();
+}else if(product == 5) {
+	p5.advertise();
+}else if(product == 6) {
+	p6.advertise();
+}
     }
+
+	@Override
+	public JLabel getNonFood() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void advertise() {
+		// TODO Auto-generated method stub
+		
+	}
+	
+	
 
 }

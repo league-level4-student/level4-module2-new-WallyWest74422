@@ -70,4 +70,11 @@ public class GoShopping extends NonFood{
 		// TODO Auto-generated method stub
 		return null;
 	}
+
+
+	@Override
+	public void advertise() {
+		// TODO Auto-generated method stub
+		
+	}
 }

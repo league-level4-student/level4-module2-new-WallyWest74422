@@ -42,10 +42,14 @@ public class TernaryOperatorDemo {
          * until the response says "FIRE!".
          */
         Scanner scanner = new Scanner(System.in);
+        String answer;
+        do {
          System.out.println("What season is it?");
-         String answer = scanner.next();
-         answer = answer == "duck season" ? answer = "FIRE!" : answer = "rabbit season";
-        System.out.println(answer);
+          answer = scanner.nextLine();
+         answer = answer.matches("duck season") == true ?answer.replace(answer, "FIRE!") : answer.replaceAll(answer, "rabbit season");
+         System.out.println(answer);
+        }while (answer.matches("FIRE!")==false);
+    
         /*
          * WARNING: Ternary operators can be used to improve the readability of
          * your code if used sparingly for very simple if/else statements.

@@ -76,7 +76,7 @@ double answer = scanner.nextDouble();
 if(answer==4.125) {
 	System.out.println("4.125. Very well done, " +name+ ".");
 }else {
-	System.out.println("Incorrect answer. Until next time, " +name+ ".");
+	System.out.println("Incorrect answer. Better luck next time, " +name+ ".");
 }
         
         
