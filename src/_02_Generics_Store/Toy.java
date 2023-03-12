@@ -7,7 +7,7 @@ import javax.swing.JLabel;
 public class Toy extends NonFood {
 	public Toy() {
 		if(new Random().nextBoolean()) {
-			this.item = "toy1.jpeg";
+			this.item = "CommanderCody.jpeg";
 		}
 		else {
 			this.item = "toy2.jpeg";
@@ -25,4 +25,5 @@ public class Toy extends NonFood {
 		// TODO Auto-generated method stub
 		
 	}
+
 }

@@ -17,7 +17,12 @@ import _02_Generics_Store.Rivendell;
 import _02_Generics_Store.Toy;
 
 public class ConsoleStore extends NonFood{
+	JFrame frame = new JFrame();
+	JPanel panel = new JPanel();
+	static Scanner scanner = new Scanner(System.in);
+	static Cart<NonFood> Cart;
 
+	
     /*
      * Write a program that simulates shopping in a store using the Scanner and
      * the classes in Generics_Store.
@@ -60,26 +65,31 @@ Rivendell p3 = new Rivendell();
 DisneyCMF p4 = new DisneyCMF();
 AntManFigure p5= new AntManFigure();
 DonutShop p6 = new DonutShop();
-JFrame frame = new JFrame();
-JPanel panel = new JPanel();
-Scanner scanner = new Scanner(System.in);
-Cart<NonFood> Cart;
 Cart = new Cart<NonFood>();
 int product;
-product = scanner.nextInt();
-if(product == 1) {
-	p1.advertise();
-}else if(product == 2) {
-	p2.advertise();
-}else if(product == 3) {
-	p3.advertise();
-}else if(product == 4) {
-	p4.advertise();
-}else if(product == 5) {
-	p5.advertise();
-}else if(product == 6) {
-	p6.advertise();
-}
+boolean checkout = false;
+do {
+	product = scanner.nextInt();
+	if(product == 1) {
+		p1.advertise();
+	}
+	if(product == 2) {
+		p2.advertise();
+	}
+	if(product == 3) {
+		p3.advertise();
+	}
+	if(product == 4) {
+		p4.advertise();
+	}
+	if(product == 5) {
+		p5.advertise();
+	}
+	if(product == 6) {
+		p6.advertise();
+	}
+}while(checkout == false);
+
     }
 
 	@Override
@@ -93,6 +103,8 @@ if(product == 1) {
 		// TODO Auto-generated method stub
 		
 	}
+
+
 	
 	
 
