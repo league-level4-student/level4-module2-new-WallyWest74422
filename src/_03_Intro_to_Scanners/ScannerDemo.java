@@ -4,7 +4,7 @@ import java.io.InputStream;
 import java.util.Scanner;
 
 public class ScannerDemo {
-
+ 
 
 	/*
      * A Scanner is an alternative to taking user input by using the console.

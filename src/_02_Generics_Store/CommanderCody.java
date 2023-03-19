@@ -14,15 +14,13 @@ public class CommanderCody extends NonFood {
 	public CommanderCody() {
 			this.item = "CommanderCody.jpeg";
 	}
-ConsoleStore cs = new ConsoleStore();
-Rivendell pic = new Rivendell();
+	
 	@Override
 	public JLabel getNonFood() {
 		// TODO Auto-generated method stub
 		return new JLabel(loadImage(this.item));
 	}
 
-	boolean browsed = false;
 	@Override
 	public void advertise() {
 		// TODO Auto-generated method stub
@@ -32,10 +30,9 @@ if(s.equals("v")) {
  this.showImage();
 }else if(s.equals("n")) {
 	System.out.println("Product not added to cart.");
-}else if(s.equals("y")) {
-	System.out.println("Product added to cart.");
-	
 }
+s = s.equals("y")? s.replace(s, "Please type 'YES' to confirm adding this product to your cart.") : s.replaceAll(s, "");
+System.out.println(s);
 	}
 
 	public void showImage() {

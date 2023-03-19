@@ -15,7 +15,7 @@ public class GoShopping extends NonFood{
 		// 2. Create a Cart object of type Candy
 //Cart<Candy> candyCart;
 //candyCart = new Cart<Candy>();
-
+ 
 		// 3. Create another Cart object of type Cereal
 
   //      Cart<Cereal> cerealCart;

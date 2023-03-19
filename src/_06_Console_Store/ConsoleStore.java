@@ -4,6 +4,7 @@ import java.util.Scanner;
 
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
 import _02_Generics_Store.AntManFigure;
@@ -20,8 +21,9 @@ public class ConsoleStore extends NonFood{
 	JFrame frame = new JFrame();
 	JPanel panel = new JPanel();
 	static Scanner scanner = new Scanner(System.in);
+	static Scanner scan = new Scanner(System.in);
 	static Cart<NonFood> Cart;
-
+String s;
 	
     /*
      * Write a program that simulates shopping in a store using the Scanner and
@@ -72,23 +74,50 @@ do {
 	product = scanner.nextInt();
 	if(product == 1) {
 		p1.advertise();
-	}
-	if(product == 2) {
+		String s=scan.nextLine();
+		if(s.equals("YES")) {
+			Cart.add(p1);
+			System.out.println("Item added to cart.");
+		}
+	} else if(product == 2) {
 		p2.advertise();
-	}
-	if(product == 3) {
+		String s=scan.nextLine();
+		if(s.equals("YES")) {
+			Cart.add(p1);
+			System.out.println("Item added to cart.");
+		}
+	}else if(product == 3) {
 		p3.advertise();
-	}
-	if(product == 4) {
+		String s=scan.nextLine();
+		if(s.equals("YES")) {
+			Cart.add(p1);
+			System.out.println("Item added to cart.");
+		}
+	}else if(product == 4) {
 		p4.advertise();
-	}
-	if(product == 5) {
+		String s=scan.nextLine();
+		if(s.equals("YES")) {
+			Cart.add(p1);
+			System.out.println("Item added to cart.");
+		}
+	}else if(product == 5) {
 		p5.advertise();
-	}
-	if(product == 6) {
+		String s=scan.nextLine();
+		if(s.equals("YES")) {
+			Cart.add(p1);
+			System.out.println("Item added to cart.");
+		}
+	}else if(product == 6) {
 		p6.advertise();
+		String s=scan.nextLine();
+		if(s.equals("YES")) {
+			Cart.add(p1);
+			System.out.println("Item added to cart.");
+		}
+	
 	}
 }while(checkout == false);
+
 
     }
 

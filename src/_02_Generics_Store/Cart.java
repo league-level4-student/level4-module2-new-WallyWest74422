@@ -18,7 +18,7 @@ public class Cart<T extends NonFood> {
     public Cart() {
         cart = (T[]) new NonFood[5];
     }
-
+ 
     // Adds an item to the cart
     public void add(T item) {
         for (int i = 0; i < cart.length; i++) {

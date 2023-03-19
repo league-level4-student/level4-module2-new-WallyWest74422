@@ -14,7 +14,7 @@ public abstract class NonFood {
 	public abstract JLabel getNonFood();
 	
 	public abstract void advertise();
-		
+		 
 	@SuppressWarnings("rawtypes")
 	public static ImageIcon loadImage(String fileName) {
 		try {

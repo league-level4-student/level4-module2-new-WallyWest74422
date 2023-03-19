@@ -10,7 +10,7 @@ import javax.swing.JPanel;
 public class LegacyKai extends NonFood {
 	Scanner scanner = new Scanner(System.in);
 	public LegacyKai() {
-			this.item = "toy1.jpeg";
+			this.item = "LegacyKai.jpeg";
 	}
 
 	@Override
@@ -28,20 +28,20 @@ public class LegacyKai extends NonFood {
 		    this.showImage();
 		}else if(s.equals("n")) {
 			System.out.println("Product not added to cart.");
-		}else if(s.equals("y")) {
-			System.out.println("Product added to cart.");
-			
 		}
+		s = s.equals("y")? s.replace(s, "Please type 'YES' to confirm adding this product to your cart.") : s.replaceAll(s, "");
+		System.out.println(s);
 	}
 
 	public void showImage() {
 		// TODO Auto-generated method stub
 		 JFrame frame = new JFrame();
+		    frame.setSize(200, 200);
 		    JPanel panel = new JPanel();
 		    frame.add(panel);
 		    frame.setVisible(true);
 		    frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		           getNonFood();
+		panel.add(this.getNonFood());
 		    frame.pack();
 	}
 }
