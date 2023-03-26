@@ -12,6 +12,7 @@ import _06_Console_Store.ConsoleStore;
 public class CommanderCody extends NonFood {
 	Scanner scanner = new Scanner(System.in);
 	public CommanderCody() {
+		this.price = 39.99;
 			this.item = "CommanderCody.jpeg";
 	}
 	
@@ -46,4 +47,9 @@ System.out.println(s);
 		panel.add(this.getNonFood());
 		    frame.pack();
 	}
+
+public double returnPrice(){
+	return this.price;
+	
+}
 }

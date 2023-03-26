@@ -9,6 +9,7 @@ import javax.swing.JPanel;
 public class Rivendell extends NonFood {
 	Scanner scanner = new Scanner(System.in);
 	public Rivendell() {	
+		this.price = 499.99;
 			this.item = "Rivendell.jpeg";
 	}
 
@@ -42,5 +43,9 @@ public class Rivendell extends NonFood {
 					    frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 					panel.add(this.getNonFood());
 					    frame.pack();
+				}
+				public double returnPrice() {
+					// TODO Auto-generated method stub
+					return this.price;
 				}
 			}

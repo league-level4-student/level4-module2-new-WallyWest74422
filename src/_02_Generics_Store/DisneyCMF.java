@@ -14,12 +14,18 @@ public class DisneyCMF extends NonFood {
 		int BlindBag = ran.nextInt(7);
 		
 	this.item = "DisneyCMF"+BlindBag+".jpeg";
+	this.price = 4.99;
 	} 
 
 	@Override
 	public JLabel getNonFood() {
 		// TODO Auto-generated method stub
 		return new JLabel(loadImage(this.item));
+	}
+	
+	public JLabel getNonFoodCover() {
+		// TODO Auto-generated method stub
+		return new JLabel(loadImage("DisneyCMFCover.jpeg"));
 	}
 
 	@Override
@@ -28,7 +34,7 @@ public class DisneyCMF extends NonFood {
 		System.out.println("Product 4 is a mystery pack of 2023 Disney minifigures celebrating 100 years of Disney. The cost is $4.99. Press 'v' to view, 'y' to add to cart, and 'n' to keep shopping.");
 		String s = scanner.nextLine();
 		if(s.equals("v")) {
-			  this.showImage();
+			  this.showCover();
 		}else if(s.equals("n")) {
 			System.out.println("Product not added to cart.");
 		}
@@ -46,5 +52,21 @@ public class DisneyCMF extends NonFood {
 		    frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		panel.add(this.getNonFood());
 		    frame.pack();
+	}
+	
+	public void showCover() {
+		// TODO Auto-generated method stub
+		 JFrame frame = new JFrame();
+		    frame.setSize(200, 200);
+		    JPanel panel = new JPanel();
+		    frame.add(panel);
+		    frame.setVisible(true);
+		    frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		panel.add(this.getNonFoodCover());
+		    frame.pack();
+	}
+	public double returnPrice() {
+		// TODO Auto-generated method stub
+		return this.price;
 	}
 }

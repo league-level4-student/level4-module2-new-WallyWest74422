@@ -1,5 +1,7 @@
 package _02_Generics_Store;
 
+import java.util.Iterator;
+
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
@@ -45,8 +47,8 @@ public class Cart<T extends NonFood> {
             }
         }
         frame.pack();
-
     }
+    
 
     public int length() {
         return cart.length;

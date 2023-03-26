@@ -10,6 +10,7 @@ import javax.swing.JPanel;
 public class LegacyKai extends NonFood {
 	Scanner scanner = new Scanner(System.in);
 	public LegacyKai() {
+		this.price = 2.99;
 			this.item = "LegacyKai.jpeg";
 	}
 
@@ -43,5 +44,9 @@ public class LegacyKai extends NonFood {
 		    frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		panel.add(this.getNonFood());
 		    frame.pack();
+	}
+	public double returnPrice() {
+		// TODO Auto-generated method stub
+		return this.price;
 	}
 }

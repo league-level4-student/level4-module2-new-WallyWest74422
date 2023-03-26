@@ -5,6 +5,8 @@ import java.util.Random;
 import javax.swing.JLabel;
 
 public class Toy extends NonFood {
+
+
 	public Toy() {
 		if(new Random().nextBoolean()) {
 			this.item = "CommanderCody.jpeg";
@@ -12,6 +14,7 @@ public class Toy extends NonFood {
 		else {
 			this.item = "toy2.jpeg";
 		}
+
 	}
 
 	@Override
@@ -24,6 +27,11 @@ public class Toy extends NonFood {
 	public void advertise() {
 		// TODO Auto-generated method stub
 		
+	}
+
+	public double returnPrice() {
+		// TODO Auto-generated method stub
+		return 0;
 	}
 
 }

@@ -9,10 +9,9 @@ import javax.swing.JLabel;
 
 public abstract class NonFood {
 	String item;
-	
+	double price;
 	Scanner scanner = new Scanner(System.in);
 	public abstract JLabel getNonFood();
-	
 	public abstract void advertise();
 		 
 	@SuppressWarnings("rawtypes")

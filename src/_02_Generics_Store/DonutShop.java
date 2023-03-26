@@ -10,7 +10,8 @@ import javax.swing.JPanel;
 public class DonutShop extends NonFood {
 	Scanner scanner = new Scanner(System.in);
 	public DonutShop() {
-			this.item = "toy1.jpeg";
+			this.item = "DonutShop.jpeg";
+			this.price = 9.99;
 		}
 
 	@Override
@@ -25,18 +26,27 @@ public class DonutShop extends NonFood {
 		System.out.println("Product 6 is a Donut Shop from the 2023 Friends line. The cost is $9.99. Press 'v' to view, 'y' to add to cart, and 'n' to keep shopping.");
 		String s = scanner.nextLine();
 		if(s.equals("v")) {
-		    JFrame frame = new JFrame();
+			  this.showImage();
+		}else if(s.equals("n")) {
+			System.out.println("Product not added to cart.");
+		}
+		s = s.equals("y")? s.replace(s, "Please type 'YES' to confirm adding this product to your cart.") : s.replaceAll(s, "");
+		System.out.println(s);
+	}
+
+	public void showImage() {
+		// TODO Auto-generated method stub
+		 JFrame frame = new JFrame();
+		    frame.setSize(200, 200);
 		    JPanel panel = new JPanel();
 		    frame.add(panel);
 		    frame.setVisible(true);
 		    frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		           getNonFood();
+		panel.add(this.getNonFood());
 		    frame.pack();
-		}else if(s.equals("n")) {
-			System.out.println("Product not added to cart.");
-		}else if(s.equals("y")) {
-			System.out.println("Product added to cart.");
-			
-		}
+	}
+	public double returnPrice() {
+		// TODO Auto-generated method stub
+		return this.price;
 	}
 }
