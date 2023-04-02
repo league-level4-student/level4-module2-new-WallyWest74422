@@ -24,8 +24,14 @@ public class ConsoleStore extends NonFood {
 	JPanel panel = new JPanel();
 	static Scanner scanner = new Scanner(System.in);
 	static Scanner scan = new Scanner(System.in);
- //static Cart<NonFood> Cart;
+//	static Cart<NonFood> Cart;
 	String s;
+static boolean checkout = false;
+static double moneySpent = 0;
+static double previousMoneySpent = 0;
+static ArrayList<String> receiptItems = new ArrayList<String>();
+static ArrayList<String> items = new ArrayList<String>();
+static ArrayList<NonFood> items1 = new ArrayList<NonFood>();
 
 	/*
 	 * Write a program that simulates shopping in a store using the Scanner and the
@@ -71,111 +77,102 @@ public class ConsoleStore extends NonFood {
 		DisneyCMF p4 = new DisneyCMF();
 		AntManFigure p5 = new AntManFigure();
 		DonutShop p6 = new DonutShop();
-		Cart<NonFood> Cart;
-		Cart = new Cart<NonFood>();
+	Cart<NonFood> cart = new Cart<NonFood>(100);
 		int product;
-		double moneySpent = 0;
-		boolean checkout = false;
 
-		ArrayList<String> items = new ArrayList<String>();
 		do {
 			product = scanner.nextInt();
 			if (product == 1) {
 				p1.advertise();
 				String s = scan.nextLine();
 				if (s.equals("YES")) {
-					Cart.add(p1);
+					cart.add(p1);
 					System.out.println("Item added to cart.");
+					previousMoneySpent = moneySpent;
 					moneySpent += p1.returnPrice();
 					String one = "Commander Cody - $39.99";
-	
-					items.add(one);
+					items.add("p1");
+					items1.add(p1);
+					receiptItems.add(one);
 				}
 			} else if (product == 2) {
 				p2.advertise();
 				String s = scan.nextLine();
 				if (s.equals("YES")) {
-					Cart.add(p2);
+					cart.add(p2);
 					System.out.println("Item added to cart.");
+					previousMoneySpent = moneySpent;
+
 					moneySpent += p2.returnPrice();
 					String two = "Legacy Kai - $2.99";
-
-					items.add(two);
+					items.add("p2");
+					items1.add(p2);
+					receiptItems.add(two);
 				}
 			} else if (product == 3) {
 				p3.advertise();
 				String s = scan.nextLine();
 				if (s.equals("YES")) {
-					Cart.add(p3);
+					cart.add(p3);
 					System.out.println("Item added to cart.");
+					previousMoneySpent = moneySpent;
+
 					moneySpent += p3.returnPrice();
 					String three = "Rivendell - $499.99";
-
-					items.add(three);
+					items.add("p3");
+					items1.add(p3);
+					receiptItems.add(three);
 				}
 			} else if (product == 4) {
 				p4.advertise();
 				String s = scan.nextLine();
 				if (s.equals("YES")) {
-					Cart.add(p4);
+					cart.add(p4);
 					System.out.println("Item added to cart.");
+					previousMoneySpent = moneySpent;
+
 					moneySpent += p4.returnPrice();
 					String four = "Disney CMF - $4.99";
-
-					items.add(four);
+					items.add("p4");
+					items1.add(p4);
+					receiptItems.add(four);
 				}
 			} else if (product == 5) {
 				p5.advertise();
 				String s = scan.nextLine();
 				if (s.equals("YES")) {
-					Cart.add(p5);
+					cart.add(p5);
 					System.out.println("Item added to cart.");
+					previousMoneySpent = moneySpent;
+
 					moneySpent += p5.returnPrice();
 					String five = "Ant-Man Figure - $29.99";
-
-					items.add(five);
+					items.add("p5");
+					items1.add(p5);
+					receiptItems.add(five);
 				}
 			} else if (product == 6) {
 				p6.advertise();
 				String s = scan.nextLine();
 				if (s.equals("YES")) {
-					Cart.add(p6);
+					cart.add(p6);
 					System.out.println("Item added to cart.");
+					previousMoneySpent = moneySpent;
+
 					moneySpent += p6.returnPrice();
 					String six = "Donut Shop - $9.99";
-
-					items.add(six);
+					items.add("p6");
+					items1.add(p6);
+					receiptItems.add(six);
 				}
 
 			} else if (product == 0) {
 				checkout = true;
 			}
 		} while (checkout == false);
+	
 		if (checkout == true) {
-			if (moneySpent <= 500.00) {
-				System.out.println("Please enter your name below to complete the transaction.");
-				String name = scan.nextLine();
-				System.out.println("       RECEIPT PRINTING");
-				System.out.println("Customer - " + name);
-				for (int i = 0; i < items.size(); i++) {
-					System.out.println(items.get(i));
-				}
-				System.out.println("    Total Cost - $" + moneySpent);
-				System.out.println("Thank you and have a good day!");
-				Cart.showCart();
-			} else if (moneySpent > 500.00) {
-				for (int i = 0; i < items.size(); i++) {
-					System.out.println(items.get(i));
-				}
-				System.out.println("    Total Cost - $" + moneySpent);
-				System.out.println(
-						"Unfortunately, your current cart exceeds the limit of $500.00. Press 'r' to remove the first item from your cart and attempt checkout again.");
-				String s = scan.nextLine();
-				if (s.equals("r")) {
-//String lastAdded = items.
-//items.remove(items.size());
-				}
-			}
+	checkout(cart);
 		}
 
 	}
@@ -186,12 +183,51 @@ public class ConsoleStore extends NonFood {
 		return null;
 	}
 
+	public static void checkout(Cart<NonFood> cart) {
+		if (checkout == true){
+			if (moneySpent <= 500.00) {
+				System.out.println("Please enter your name below to complete the transaction.");
+				String name = scan.nextLine();
+				System.out.println("       RECEIPT PRINTING");
+				System.out.println("Customer - " + name);
+				for (int i = 0; i < receiptItems.size(); i++) {
+					System.out.println(receiptItems.get(i));
+				}
+				System.out.println("    Total Cost - $" + moneySpent);
+				System.out.println("Thank you and have a good day!");
+				cart.showCart();
+			} else if (moneySpent > 500.00) {
+				for (int i = 0; i < receiptItems.size(); i++) {
+					System.out.println(receiptItems.get(i));
+				}
+				System.out.println("    Total Cost - $" + moneySpent);
+				System.out.println(
+						"Unfortunately, your current cart exceeds the limit of $500.00. Press 'r' to remove the first item from your cart to be able to attempt checkout again.");
+				String s = scan.nextLine();
+				if (s.equals("r")) {
+					receiptItems.remove(receiptItems.size()-1);
+					String lastItem = items.get(items.size()-1);
+					items.remove(lastItem);
+					moneySpent = 0;
+					cart = new Cart<NonFood>(100);
+					for(int i = 0; i< items.size(); i++) {
+						cart.add(items1.get(i));
+					}
+					for(int i = 0; i< cart.length(); i++) {
+//						System.out.println(i);
+	//					System.out.println(cart.cart[i]);
+						moneySpent += cart.cart[i].returnPrice();
+					}
+checkout(cart);
+				}
+			}
+		}
+	}
+	
 	@Override
 	public void advertise() {
 		// TODO Auto-generated method stub
 
 	}
-
-
 
 }

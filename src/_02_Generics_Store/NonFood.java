@@ -13,11 +13,14 @@ public abstract class NonFood {
 	Scanner scanner = new Scanner(System.in);
 	public abstract JLabel getNonFood();
 	public abstract void advertise();
-		 
+	public double returnPrice(){
+		return this.price;
+		
+	}
 	@SuppressWarnings("rawtypes")
 	public static ImageIcon loadImage(String fileName) {
 		try {
-			return new ImageIcon(ImageIO.read(new Cart().getClass().getResourceAsStream("images/"+fileName)));
+			return new ImageIcon(ImageIO.read(new Cart(100).getClass().getResourceAsStream("images/"+fileName)));
 		} catch (IOException e) {
 			e.printStackTrace();
 			return null;

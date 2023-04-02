@@ -15,10 +15,10 @@ import javax.swing.JPanel;
 
 @SuppressWarnings("unchecked")
 public class Cart<T extends NonFood> {
-    private T[] cart;
+    public T[] cart;
 
-    public Cart() {
-        cart = (T[]) new NonFood[5];
+    public Cart(int maxItems) {
+        cart = (T[]) new NonFood[maxItems];
     }
  
     // Adds an item to the cart
@@ -34,7 +34,7 @@ public class Cart<T extends NonFood> {
     }
 
     // Displays everything currently in the cart
-    public void showCart() {
+    public  void showCart() {
         JFrame frame = new JFrame();
         JPanel panel = new JPanel();
         frame.add(panel);
@@ -51,6 +51,11 @@ public class Cart<T extends NonFood> {
     
 
     public int length() {
+        for (int i = 0; i < cart.length; i++) {
+            if (cart[i] == null) {
+                return i;
+            }
+        }
         return cart.length;
     }
 }

@@ -10,10 +10,8 @@ import javax.swing.JPanel;
 public class DisneyCMF extends NonFood {
 	Scanner scanner = new Scanner(System.in);
 	public DisneyCMF() {
-		Random ran = new Random();
-		int BlindBag = ran.nextInt(7);
-		
-	this.item = "DisneyCMF"+BlindBag+".jpeg";
+		Random ran = new Random();	
+	this.item = "DisneyCMF"+(ran.nextInt(8) +1)+".jpeg";
 	this.price = 4.99;
 	} 
 

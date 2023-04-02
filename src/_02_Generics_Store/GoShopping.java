@@ -38,10 +38,10 @@ public class GoShopping extends NonFood{
 		
 		// 8. Repeat steps 2-5 for a Clothing Cart and a Toy Cart
 		Cart<Clothing> clothingCart;
-		clothingCart = new Cart<Clothing>();
+		clothingCart = new Cart<Clothing>(100);
 
 		Cart<Toy> toyCart;
-		 toyCart = new Cart<Toy>();
+		 toyCart = new Cart<Toy>(100);
 		
 		 for(int i=0;i<3;i++) {
 				clothingCart.add(new Clothing());
