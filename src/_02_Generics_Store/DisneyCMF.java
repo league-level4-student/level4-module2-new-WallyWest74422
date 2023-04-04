@@ -8,9 +8,10 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 
 public class DisneyCMF extends NonFood {
+	Random ran;
 	Scanner scanner = new Scanner(System.in);
 	public DisneyCMF() {
-		Random ran = new Random();	
+		 ran = new Random();	
 	this.item = "DisneyCMF"+(ran.nextInt(8) +1)+".jpeg";
 	this.price = 4.99;
 	} 
@@ -18,7 +19,7 @@ public class DisneyCMF extends NonFood {
 	@Override
 	public JLabel getNonFood() {
 		// TODO Auto-generated method stub
-		return new JLabel(loadImage(this.item));
+		return new JLabel(loadImage("DisneyCMF"+(ran.nextInt(8) +1)+".jpeg"));
 	}
 	
 	public JLabel getNonFoodCover() {

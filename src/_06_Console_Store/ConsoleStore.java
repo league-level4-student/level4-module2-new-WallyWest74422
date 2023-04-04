@@ -29,7 +29,8 @@ public class ConsoleStore extends NonFood {
 static boolean checkout = false;
 static double moneySpent = 0;
 static double previousMoneySpent = 0;
-static ArrayList<String> receiptItems = new ArrayList<String>();
+static ArrayList<String> receiptItems =
+new ArrayList<String>();
 static ArrayList<String> items = new ArrayList<String>();
 static ArrayList<NonFood> items1 = new ArrayList<NonFood>();
 
