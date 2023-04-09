@@ -46,7 +46,7 @@ public class TernaryOperatorDemo {
         do {
          System.out.println("What season is it?");
           answer = scanner.nextLine();
-         answer = answer.equals("duck season")?answer.replace(answer, "FIRE!") : answer.replaceAll(answer, "rabbit season");
+         answer = answer.equals("duck season")?answer.replaceAll(answer, "FIRE!") : answer.replaceAll(answer, "rabbit season");
          System.out.println(answer);
         }while (answer.matches("FIRE!")==false);
     
