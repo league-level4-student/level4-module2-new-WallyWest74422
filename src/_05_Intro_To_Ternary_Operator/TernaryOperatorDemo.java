@@ -12,7 +12,7 @@ public class TernaryOperatorDemo {
 
     public static void main(String[] args) {
 
-        int x = 5;
+        int x = 3;
 
         /*
          * The following ternary operator checks if x is equal to 5(the if

@@ -15,7 +15,7 @@ public abstract class Food {
     public static ImageIcon loadImage(String fileName) {
         try {
             return new ImageIcon(ImageIO
-                    .read(new Cart().getClass().getResourceAsStream("images/"+fileName)));
+                    .read(new Cart(100).getClass().getResourceAsStream("images/"+fileName)));
         } catch (IOException e) {
             e.printStackTrace();
             return null;
